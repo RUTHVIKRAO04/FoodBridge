@@ -1,0 +1,150 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #EEE4E4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full height for the body */
+  }
+  
+  /* Header/Navbar Styling */
+  header {
+    width: 100%;
+    background-color: #EEE4E4;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 20px;
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 40px; /* Large font size for FoodBridge */
+    font-weight: bold;
+    color: #000;
+    margin-right: auto;
+     /* Push the logo to the far left */
+  }
+  .logo a{
+    text-decoration: none;
+    color: #926868;
+  }
+  .logo a:hover{
+    color: #6a4949;
+  }
+  
+  .navvy {
+    display: flex;
+    justify-content: flex-end; /* Align navigation links to the right */
+    flex-grow: 1;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 140px; /* Increase spacing between links */
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #453c3c;
+    font-size: 1.35em; /* Slightly larger font */
+    font-weight: lighter;
+    transition: color 0.3s, font-weight 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #000;
+    font-weight: bolder; /* Make bold on hover */
+  }
+  
+  .nav-links .login {
+    font-weight: bold;
+    color: #000;
+  }
+  /* Main Content Styling */
+  /* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .home-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url('./hak21.webp'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0.9;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with opacity */
+    z-index: 1;
+  }
+  
+  .home-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2; /* Above the overlay */
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .text-section {
+    color: white; /* Text color */
+    max-width: 50%;
+  }
+  
+  .main-heading {
+    font-size: 148px; /* Large heading size */
+    font-weight: bold;
+    margin: 0 0 20px;
+  }
+  
+  .tagline {
+    font-size: 28px; /* Smaller tagline size */
+    line-height: 1.6;
+  }
+  
+  .image-section {
+    max-width: 40%;
+  }
+  
+  .side-image {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow to the image */
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  

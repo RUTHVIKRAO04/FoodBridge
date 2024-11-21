@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodBridge</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #EEE4E4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-card {
+    background-color: #E8D8D8;
+    border-radius: 10px;
+    padding: 50px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    height: auto;
+}
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #333;
+        text-align: left;
+    }
+
+    input {
+        width: 90%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 55%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #FFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .register-link {
+        margin-top: 20px;
+        display: block;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .register-link a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo"><a href="home.html">FoodBridge</a></div>
+        <ul class="nav-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./donor.html">Donor</a></li>
+            <li><a href="./recipient.html">Recipient</a></li>
+            <li><a href="./login.html" class="login">Login</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <div class="login-card">
+    <h1>Login to FoodBridge</h1>
+    <form>
+        <label for="email">Email</label>
+        <input type="email" id="signin-email" placeholder="Enter your email" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="signin-password" placeholder="Enter your password" required>
+        
+        <button class="btn-12"><span>Login</span></button>
+    </form>
+    <p class="register-link">Don't have an account? <a href="./register.html">Register here</a></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"></script>
+  <script type="module">
+    import { auth } from './firebase-config.js';
+    import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js';
+
+    document.querySelector('.btn-12').addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default form submission
+      const email = document.getElementById('signin-email').value;
+      const password = document.getElementById('signin-password').value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            const userName = user.displayName || user.email.split('@')[0]; // Use displayName or fallback to the email prefix
+            
+            alert(`Welcome back, ${userName}!`);
+            // Redirect to the home page with the user's name in the URL
+            window.location.href = `home.html?name=${encodeURIComponent(userName)}`;
+        })
+        .catch((error) => {
+            alert(`Error: ${error.message}`);
+        });
+    });
+  </script>
+</body>
+</html>

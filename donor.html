@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Food</title>
+  <link rel="stylesheet" href="stylesd.css">
+  
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><a href="./home.html">FoodBridge</a></div>
+      <div class="navvy">
+      <ul class="nav-links">
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./donor.html">Donor</a></li>
+        <li><a href="./recipient.html">Recipient</a></li>
+        <li><a href="./login.html">Login</a></li>
+      </ul></div>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div class="card">
+      <h1>Donate Food</h1>
+      <form id="donation-form">
+        <label for="foodType">Food Type :</label>
+        <input type="text" id="foodType" name="foodType" placeholder="Enter food type" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter the quantity (Kg's)" required>
+
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="How Long Food Can Stay (Hour's)" required>
+
+        <label for="pickupLocation">Pickup Location :</label>
+        <input type="text" id="pickupLocation" name="pickupLocation" placeholder="Enter pickup location" required>
+
+        <label for="specialNotes">Special Notes:</label>
+        <input type="text" id="specialNotes" name="specialNotes" placeholder="Food Condition" required>
+
+        <button type="button" class="btn-12" id="donateBtn"><span>Donate</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Include the custom JavaScript file -->
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC6Zn66lFRutOqwT3t4O-l8seABC7m69eM", // Replace with your Firebase API Key
+      authDomain: "foodbridge-7653a.firebaseapp.com", // Replace with your Firebase Project ID
+      projectId: "foodbridge-7653a", // Replace with your Firebase Project ID
+      storageBucket: "foodbridge-7653a.firebasestorage.app", // Replace with your Firebase Storage Bucket
+      messagingSenderId: "8344230021", // Replace with your Firebase Sender ID
+      appId: "1:8344230021:web:07f5f6b4ea0fb47c42f1ec", // Replace with your Firebase App ID
+      measurementId: "G-960X2CMDSV"
+    };
+
+    // Initialize Firebase only after the DOM is ready
+    window.onload = function () {
+      // Initialize Firebase
+      try {
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        console.log("Firebase initialized successfully.");
+      } catch (error) {
+        console.error("Error initializing Firebase: ", error);
+      }
+
+      // Event listener for the Donate button
+      document.getElementById("donateBtn").addEventListener("click", async function () {
+        const foodType = document.getElementById("foodType").value;
+        const quantity = document.getElementById("quantity").value;
+        const expiryDate = document.getElementById("expiryDate").value;
+        const pickupLocation = document.getElementById("pickupLocation").value;
+        const specialNotes = document.getElementById("specialNotes").value;
+
+        console.log("Form data:", { foodType, quantity, expiryDate, pickupLocation, specialNotes });
+
+        // Validate the form data
+        if (foodType && quantity && expiryDate && pickupLocation && specialNotes) {
+          try {
+            // Add data to Firestore
+            await db.collection("donations").add({
+              foodType: foodType,
+              quantity: quantity,
+              expiryDate: expiryDate,
+              pickupLocation: pickupLocation,
+              specialNotes: specialNotes,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            });
+
+            // Clear form after submission
+            document.getElementById("donation-form").reset();
+
+            // Display success message
+            alert("Donation has been successfully recorded!");
+            console.log("Donation added successfully!");
+            
+            // Optional: Redirect to a new page after submission
+            // window.location.href = "thank-you.html";  // Uncomment if you want to redirect
+
+          } catch (error) {
+            console.error("Error adding document: ", error);
+            alert("Donation added successfully.");
+          }
+        } else {
+          alert("Please fill in all the fields before submitting.");
+        }
+      });
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #EEE4E4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full height for the body */
+  }
+  
+  /* Header/Navbar Styling */
+  header {
+    width: 100%;
+    background-color: #EEE4E4;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 15px;
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 40px; /* Large font size for FoodBridge */
+    font-weight: bold;
+    color: #000;
+    margin-right: auto; /* Push the logo to the far left */
+  }
+  .logo a{
+    text-decoration: none;
+    color: #926868;
+  }
+  
+  
+  .navvy {
+    display: flex;
+    justify-content: flex-end; /* Align navigation links to the right */
+    flex-grow: 1;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 140px; /* Increase spacing between links */
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #453c3c;
+    font-size: 1.35em; /* Slightly larger font */
+    font-weight: lighter;
+    transition: color 0.3s, font-weight 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #000;
+    font-weight: bolder; /* Make bold on hover */
+  }
+  
+  .nav-links .login {
+    font-weight: bold;
+    color: #000;
+  }
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #EEE4E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card {
+    background-color: #E8D8D8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: left;
+
+  }
+  
+  .card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #000;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #F9F4F4;
+  }
+  
+  form button {
+    background-color: #EEE4E4;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #D6CACA;
+  }
+  
+  .btn-12,
+  .btn-12 *,
+  .btn-12 :after,
+  .btn-12 :before,
+  .btn-12:after,
+  .btn-12:before {
+    border: 0 solid;
+    box-sizing: border-box;
+  }
+  
+  .btn-12 {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+      Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    font-weight: 900;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+    text-transform: uppercase;
+  }
+  
+  .btn-12:disabled {
+    cursor: default;
+  }
+  
+  .btn-12:-moz-focusring {
+    outline: auto;
+  }
+  
+  .btn-12 svg {
+    display: block;
+    vertical-align: middle;
+  }
+  
+  .btn-12 [hidden] {
+    display: none;
+  }
+  
+  .btn-12 {
+    border-radius: 99rem;
+    border-width: 2px;
+    overflow: hidden;
+    padding: 0.8rem 3rem;
+    position: relative;
+  }
+  
+  .btn-12 span {
+    mix-blend-mode: difference;
+  }
+  
+  .btn-12:after,
+  .btn-12:before {
+    background: linear-gradient(
+      90deg,
+      #fff 25%,
+      transparent 0,
+      transparent 50%,
+      #fff 0,
+      #fff 75%,
+      transparent 0
+    );
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: translateY(var(--progress, 100%));
+    transition: transform 0.2s ease;
+  }
+  
+  .btn-12:after {
+    --progress: -100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 25%,
+      #fff 0,
+      #fff 50%,
+      transparent 0,
+      transparent 75%,
+      #fff 0
+    );
+    z-index: -1;
+  }
+  
+  .btn-12:hover:after,
+  .btn-12:hover:before {
+    --progress: 0;
+  }
+  
+  .btn-12{
+    left: 55px;
+  }

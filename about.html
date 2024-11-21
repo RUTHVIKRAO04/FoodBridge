@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodBridge</title>
+  <link rel="stylesheet" href="stylesh.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><a href="./home.html">FoodBridge</a></div>
+      <div class="navvy">
+      <ul class="nav-links">
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./donor.html">Donor</a></li>
+        <li><a href="./recipient.html">Recipient</a></li>
+        <li><a href="./login.html" >Login</a></li>
+      </ul></div>
+    </nav>
+  </header>
+<main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #EEE4E4;
+            color: #333;
+            line-height: 1.8;
+        }
+    
+        .about-container {
+            max-width: 1200px;
+            margin: 100px auto 0; /* Top margin to offset navbar, center align horizontally */
+            padding-left: 40px; /* Slight left alignment for text */
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between; /* Space between text and images */
+            gap: 20px;
+        }
+    
+        .about-text {
+            flex: 1.2;
+            text-align: left;
+        }
+    
+        .about-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+    
+        .about-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+    
+        .images-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-right: 40px; /* Move images section to the right */
+        }
+    
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #E8D8D8;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .image-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+    
+        .image-container:hover {
+            transform: scale(1.05);
+            transition: 0.3s ease;
+        }
+    
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column; /* Stack text and images for smaller screens */
+                padding: 20px;
+            }
+    
+            .images-section {
+                margin-right: 0; /* Reset right margin for smaller screens */
+            }
+    
+            .image-container img {
+                height: 200px;
+            }
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="about-container">
+        <div class="about-text">
+            <h1>About Us</h1>
+            <p>
+                Welcome to **FoodBridge**, a platform designed to bring people together to fight food waste and hunger. 
+                Every day, countless restaurants, businesses, and individuals have surplus food that goes uneaten while 
+                millions struggle to find their next meal. At FoodBridge, we aim to connect these dots by providing a 
+                convenient platform for donating and accessing food.
+            </p>
+            <p>
+                <strong>Our Mission:</strong> To create a world where no food goes to waste, and no one goes hungry. 
+                FoodBridge serves as a bridge between those with surplus food and those who need it most, including the 
+                poor, elderly, and orphanages.
+            </p>
+            <p>
+                <strong>How It Works:</strong> Restaurants, individuals, and organizations can upload details of their 
+                surplus food onto our platform. Those in need, or caretakers of vulnerable communities, can browse these 
+                listings and claim food in real-time. FoodBridge ensures a seamless process to make sure the food reaches 
+                its destination quickly and safely.
+            </p>
+        </div>
+
+        <div class="images-section">
+            <!-- Image containers: replace the src values with your image links -->
+            <div class="image-container">
+                <img src="./hak12.jpg" >
+            </div>
+            <div class="image-container">
+                <img src="hak13.jpg" >
+            </div>
+            <div class="image-container">
+                <img src="hak14.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</main>
+</body>
+</html>
